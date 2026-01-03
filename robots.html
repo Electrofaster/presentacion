@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electrofaster - Nuestros Robots</title>
+
+  <style>
+    /* ================= VARIABLES ================= */
+    :root{
+      --bg:#000000;
+      --card:#0f1720;
+      --accent:#ff9a00;
+      --muted:#9aa3ad;
+      --text:#ffffff;
+      --radius:12px;
+      --max-width:1100px;
+      --gutter:16px;
+      --glass: rgba(255,255,255,0.05);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    img{ max-width:100%; display:block; }
+
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 var(--gutter);
+    }
+
+    /* ================= HEADER ================= */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 0;
+    }
+
+    .brand img{
+      height:60px;
+    }
+
+    nav{
+      position:relative;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:10px;
+    }
+
+    .nav-links a{
+      color:var(--text);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .nav-links a:hover{
+      background:var(--glass);
+    }
+
+    .menu-btn{
+      display:none;
+      background:none;
+      border:1px solid rgba(255,255,255,.2);
+      color:white;
+      padding:6px 10px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    /* ================= TITLE ================= */
+    .page-title{
+      margin:18px auto;
+      padding:6px 10px;
+      text-align:center;
+      border-radius:10px;
+      background:radial-gradient(circle, rgba(255, 154, 0, 1) 30%, rgba(255, 154, 0, 0.3) 70%, transparent 100%);
+    }
+
+    .page-title h2{
+      margin:0;
+      font-size:1.5rem;
+    }
+
+    /* ================= SECTIONS ================= */
+    .section{
+      margin:32px 0;
+      text-align:center;
+    }
+
+    .section-title{
+      font-size:1.25rem;
+      margin-bottom:12px;
+    }
+
+    .robot-description{
+      max-width:600px;
+      margin:0 auto 18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .robot-images{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+      gap:16px;
+      max-width:900px;
+      margin:0 auto;
+      justify-items: center; /* centra horizontalmente */
+        align-items: center;
+    }
+
+    .robot-images img{
+      width:100%;
+      max-width:300px;
+      height:220px;
+      object-fit:cover;
+      border-radius:var(--radius);
+    }
+
+    .separator{
+      width:80%;
+      height:4px;
+      margin:30px auto;
+      background:linear-gradient(to right, var(--accent), transparent);
+      border-radius:2px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      margin-top:40px;
+      padding:20px;
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    }
+
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:space-between;
+    }
+
+    .footer-item{
+      min-width:200px;
+    }
+
+    a.social{
+      display:inline-block;
+      margin-right:10px;
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      position:relative;
+    }
+
+    a.social::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-3px;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      transition:.25s;
+    }
+
+    a.social:hover::after{
+      width:100%;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width:768px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:60px;
+        right:0;
+        background:var(--card);
+        flex-direction:column;
+        padding:10px;
+        border-radius:10px;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .robot-images img{
+        height:180px;
+      }
+    }
+
+    @media (max-width:480px){
+      .page-title h2{
+        font-size:1.25rem;
+      }
+
+      .robot-images{
+        grid-template-columns:1fr;
+      }
+
+      .robot-images img{
+        height:auto;
+        max-width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <img src="Electrofasters2.jpg" alt="Electrofaster logo">
+      </div>
+
+      <nav>
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <div class="nav-links" id="mainNav">
+          <a href="index.html">Inicio</a>
+          <a href="robots.html">Nuestros Robots</a>
+          <a href="participaciones.html">Participaciones</a>
+          <a href="patrocinantes.html">Patrocinantes</a>
+          <a href="#footer">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- TITLE -->
+    <div class="page-title">
+      <h2>Nuestros Robots</h2>
+    </div>
+
+    <!-- SECTIONS -->
+    <h4 style="text-align: justify;">
+    Nuestros robots son el resultado de diseños originales y adaptaciones de ideas conceptuales, desarrollados por nuestro equipo y fabricados principalmente mediante impresión 3D. Cada modelo es probado y ajustado en casa para garantizar su funcionamiento y desempeño antes de ser llevado a competencias o exhibiciones. Las imágenes presentadas en esta sección son referenciales y generadas con apoyo de inteligencia artificial.
+    </h4>
+    <section class="section">
+      <h3 class="section-title">Robots Laberinto</h3>
+      <p class="robot-description">
+        Deben resolver un laberinto con paredes separadas a una distancia fija en el menor tiempo posible.
+      </p>
+      <div class="robot-images">
+        <img src="robot1.png" alt="">
+        <img src="robot2.png" alt="">
+      </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+      <h3 class="section-title">Robots Trepadores</h3>
+      <p class="robot-description">
+        Deben subir por una pared vertical valiéndose del magnetismo y de la rapidez.
+      </p>
+      <div class="robot-images">
+        <img src="robot3.png" alt="">
+        <img src="robot4.png" alt="">
+      </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+      <h3 class="section-title">Seguidores de Línea</h3>
+      <p class="robot-description">
+        Deben seguir un trayecto autónomo con rectas y curvas en el menor tiempo posible.
+      </p>
+      <div class="robot-images">
+        <img src="robot5.png" alt="">
+        <img src="robot6.png" alt="">
+        <img src="robot7.png" alt="">
+      </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+      <h3 class="section-title">Robot de Batalla 1Lb</h3>
+      <p class="robot-description">
+        Robot controlado por bluetooth que debe inutilizar a su oponente.
+      </p>
+      <div class="robot-images">
+        <img src="robot8.png" alt="">
+      </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+      <h3 class="section-title">Bote de Carreras</h3>
+      <p class="robot-description">
+        Robot acuático diseñado para competir sobre la superficie del agua, donde debe completar recorridos a alta velocidad demostrando estabilidad, control y maniobrabilidad.
+      </p>
+      <div class="robot-images">
+        <img src="robot9.png" alt="">
+      </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+      <h3 class="section-title">Robot insecto</h3>
+      <p class="robot-description">
+        Robot con diseño inspirado en insectos, capaz de desplazarse de forma ágil y estable, ideal para superar obstáculos y terrenos irregulares.
+      </p>
+      <div class="robot-images">
+        <img src="robot10.png" alt="">
+      </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+      <h3 class="section-title">Robot sumo autónomo</h3>
+      <p class="robot-description">
+        Robot programado para detectar y empujar a su oponente fuera del área de combate sin intervención humana, utilizando sensores y estrategias autónomas.
+      </p>
+      <div class="robot-images">
+        <img src="robot11.png" alt="">
+      </div>
+    </section>
+
+    <section style="margin-top:18px" class="center"> <h2>¡En Electrofaster, la robótica es el futuro y la diversión nuestro motor!</h2> </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-grid">
+        <div class="footer-item">
+          <h4>Ubicación</h4>
+          <p style="color:var(--muted)">Guayaquil, Ecuador</p>
+        </div>
+
+        <div class="footer-item">
+          <h4>Contacto</h4>
+          <p><a href="mailto:loselectrofaster@gmail.com" style="color:white;font-weight:bold">loselectrofaster@gmail.com</a></p>
+        </div>
+
+        <div class="footer-item">
+          <h4>Síguenos</h4>
+          <a class="social" href="https://www.youtube.com/@loselectrofaster">YouTube</a>
+          <a class="social" href="https://www.tiktok.com/@loselectrofaster">TikTok</a>
+          <a class="social" href="https://www.instagram.com/electrofaster/">Instagram</a>
+        </div>
+      </div>
+
+      <p style="text-align:center;margin-top:16px;color:var(--muted)">
+        © 2024 Electrofaster
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    (() => {
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mainNav');
+      btn.addEventListener('click', () => nav.classList.toggle('show'));
+    })();
+  </script>
+</body>
+</html>

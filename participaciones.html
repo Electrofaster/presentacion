@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrofaster - Participaciones</title>
+
+<style>
+:root{
+  --bg:#000;
+  --card:#0f1720;
+  --accent:#ff9a00;
+  --muted:#9aa3ad;
+  --text:#fff;
+  --radius:14px;
+  --max-width:1100px;
+  --gutter:16px;
+}
+
+/* RESET */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,Arial,sans-serif;
+}
+img{max-width:100%;display:block}
+
+/* CONTAINER */
+.container{
+  max-width:var(--max-width);
+  margin:auto;
+  padding:0 var(--gutter);
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+}
+.brand img{height:60px}
+nav{position:relative}
+.nav-links{
+  display:flex;
+  gap:10px;
+}
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+}
+.nav-links a:hover{background:rgba(255,255,255,.08)}
+.menu-btn{
+  display:none;
+  background:none;
+  border:1px solid rgba(255,255,255,.25);
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+/* TITLE */
+.page-title{
+  margin:18px auto;
+      padding:6px 10px;
+      text-align:center;
+      border-radius:10px;
+      background:radial-gradient(circle, rgba(255, 154, 0, 1) 30%, rgba(255, 154, 0, 0.3) 70%, transparent 100%);
+    }
+
+.page-title h2{
+      margin:0;
+      font-size:1.5rem;
+    }
+
+/* EVENTOS */
+.evento{
+  margin-bottom:40px;
+}
+
+.evento-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:16px;
+}
+.evento-logo{
+  display: flex;
+  flex-direction: column;
+  grid-row:span 2;
+  background:#fff;
+  border-radius:var(--radius);
+  padding:14px;
+  align-items: center;      /* centra horizontalmente */
+  justify-content: center;
+  text-align:center;
+  color:#000;
+  gap: 8px;                 /* separación uniforme entre elementos */
+  box-sizing: border-box;
+}
+.evento-logo img{margin-bottom:10px;
+object-fit: contain;      /* el logo no se recorta */
+  display: block;}
+.evento-logo h3{margin:4px 0 2px}
+.evento-logo p{margin:0;color:#444;font-weight:600}
+
+/* CARD PREMIO */
+.evento-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:12px;
+  text-align:center;
+}
+.evento-card h4{margin:0;font-size:.95rem}
+.evento-card span{
+  display:block;
+  margin-bottom:6px;
+  font-size:.85rem;
+  color:var(--accent);
+  font-weight:600;
+}
+.evento-card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* SEPARATOR */
+.separator{
+  width:80%;
+  height:4px;
+  margin:40px auto;
+  background:linear-gradient(to right,var(--accent),transparent);
+  border-radius:4px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:40px;
+  padding:20px;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
+  border-radius:var(--radius);
+}
+.footer-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:space-between;
+}
+.footer-item{min-width:200px}
+.social{
+  display:inline-block;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  margin-right:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .evento-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .evento-logo{
+    grid-column:1/-1;
+    grid-row:auto;
+  }
+}
+@media(max-width:520px){
+  .evento-grid{grid-template-columns:1fr}
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    right:0;
+    top:60px;
+    background:var(--card);
+    padding:10px;
+    border-radius:10px;
+  }
+  .nav-links.show{display:flex}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <div class="brand">
+    <img src="Electrofasters2.jpg" alt="Electrofaster">
+  </div>
+  <nav>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="nav-links" id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="robots.html">Nuestros Robots</a>
+      <a href="participaciones.html">Participaciones</a>
+      <a href="patrocinantes.html">Patrocinantes</a>
+      <a href="#footer">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-title"><h2>Participaciones</h2></div>
+
+<!-- ================== Julio 2024 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="logo_sensor.png" alt="">
+      <h3>Asociación de Educadores en Robótica</h3>
+      <p>Julio 2024</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Robot Laberinto</h4>
+      <span>1er lugar</span>
+      <img src="sensor_f1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Robot Laberinto</h4>
+      <span>Premiación</span>
+      <img src="sensor_f2.png">
+    </div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ================== Agosto 2024 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="Logo Aleman.png" alt="">
+      <h3>Colegio Alemán Humboldt</h3>
+      <p>Agosto 2024</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Robot Laberinto</h4>
+      <span>2do lugar</span>
+      <img src="aleman2024_1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Jr.</h4>
+      <span>Participación</span>
+      <img src="aleman2024_2.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Amateur</h4>
+      <span>Participación</span>
+      <img src="aleman2024_3.png">
+    </div>
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+
+<!-- ================== Octubre 2024 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="Logo Delfines.png" alt="">
+      <h3>Liceo Los Delfines</h3>
+      <p>Octubre 2024</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Jr.</h4>
+      <span>1er lugar</span>
+      <img src="delfines2024-1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Amateur</h4>
+      <span>Participación</span>
+      <img src="delfines2024-2.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Robot Laberinto</h4>
+      <span>Participación</span>
+      <img src="delfines2024-3.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Batalla 1Lb Jr.</h4>
+      <span>Participación</span>
+      <img src="delfines2024-4.png">
+    </div>
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+
+<!-- ================== Noviembre 2024 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="Logo_Killtronic.jpg" alt="">
+      <h3>Universidad Politécnica Salesiana UPS</h3>
+      <p>Noviembre 2024</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Amateur</h4>
+      <span>2do lugar</span>
+      <img src="killtronic2024_1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Trepador</h4>
+      <span>Participación</span>
+      <img src="killtronic2024_2.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Robot Laberinto</h4>
+      <span>Participación</span>
+      <img src="killtronic2024_3.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea avanzado</h4>
+      <span>Participación</span>
+      <img src="killtronic2024_4.png">
+    </div>
+
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ================== Agosto 2025 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="Logo Aleman3.jpeg" alt="">
+      <h3>Colegio Alemán Humboldt</h3>
+      <p>Agosto 2025</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Carrera de botes</h4>
+      <span>1er lugar</span>
+      <img src="aleman2025-1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Batalla 1Lb Jr.</h4>
+      <span>1er lugar</span>
+      <img src="aleman2025-2.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Jr.</h4>
+      <span>1er lugar</span>
+      <img src="aleman2025-3.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Amateur</h4>
+      <span>2do lugar</span>
+      <img src="aleman2025-4.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Robot Laberinto</h4>
+      <span>3er lugar</span>
+      <img src="aleman2025-5.png">
+    </div>
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ================== Noviembre 2025 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="kiltronic7.png" alt="">
+      <h3>Universidad Politécnica Salesiana UPS</h3>
+      <p>Noviembre 2025</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea Amateur</h4>
+      <span>2do lugar</span>
+      <img src="kiltronic2025-1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Skill de soldadura</h4>
+      <span>Participación</span>
+      <img src="kiltronic2025-2.png">
+    </div>
+
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ================== Diciembre 2025 ================== -->
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="Ecomundo.jpg" alt="">
+      <h3>Ecomundo Unidad Educativa Particular Bilingüe</h3>
+      <p>Diciembre 2025</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Batalla 1Lb Jr.</h4>
+      <span>1er lugar</span>
+      <img src="ecomundo2025-1.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor Jr. sensores individuales</h4>
+      <span>1er lugar</span>
+      <img src="ecomundo2025-2.png">
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor Jr. barra de sensores</h4>
+      <span>1er lugar</span>
+      <img src="ecomundo2025-3.png">
+    </div>
+
+ 
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<section class="evento">
+  <div class="evento-grid">
+
+    <div class="evento-logo">
+      <img src="DRC2025.png" alt="">
+      <h3>Liceo los Delfines</h3>
+      <p>Diciembre 2025</p>
+    </div>
+
+    <div class="evento-card">
+      <h4>Seguidor de línea amateur</h4>
+      <span>Participación</span>
+      <img src="delfines_2025_1.png">
+    </div>
+
+ 
+
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<section style="margin-top:18px" class="center"> <h2>¡En Electrofaster, la robótica es el futuro y la diversión nuestro motor!</h2> </section>
+
+
+<footer id="footer">
+<div class="footer-grid">
+  <div class="footer-item"><h4>Ubicación</h4><p>Guayaquil, Ecuador</p></div>
+  <div class="footer-item"><h4>Contacto</h4><p>loselectrofaster@gmail.com</p></div>
+  <div class="footer-item">
+    <h4>Síguenos</h4>
+    <a class="social" href="#">YouTube</a>
+    <a class="social" href="#">TikTok</a>
+    <a class="social" href="#">Instagram</a>
+  </div>
+</div>
+<p style="text-align:center;color:var(--muted)">© 2024 Electrofaster</p>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+  btn.addEventListener('click',()=>nav.classList.toggle('show'));
+})();
+</script>
+
+</body>
+</html>

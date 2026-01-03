@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Electrofaster</title>
+
+<style>
+:root{
+  --bg:#000000;
+  --card:#0f1720;
+  --accent:#ff9a00;
+  --muted:#9aa3ad;
+  --text:#ffffff;
+  --radius:12px;
+  --max-width:1100px;
+  --gutter:16px;
+  --glass:rgba(255,255,255,0.05);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+
+img{max-width:100%;display:block}
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+
+/* ================= HEADER ================= */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+}
+
+.brand img{height:60px}
+
+nav{position:relative}
+
+.nav-links{
+  display:flex;
+  gap:10px;
+}
+
+.nav-links a{
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+}
+
+.nav-links a:hover{background:var(--glass)}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:1px solid rgba(255,255,255,.2);
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+  display:flex;
+  flex-direction:column;      /* ← texto arriba, carrusel abajo */
+  gap:16px;
+  margin:24px 0;
+}
+
+.hero .card{
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 22px rgba(0,0,0,.6);
+}
+
+/* ================= CAROUSEL ================= */
+.carousel{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  border-radius:var(--radius);
+}
+
+.carousel-inner{
+  display:flex;
+  transition:transform .6s ease;
+}
+
+.carousel-item{
+  flex:0 0 100%;
+}
+
+.carousel-item img{
+  width:100%;
+  height:clamp(240px,40vw,380px);
+  object-fit:cover;
+}
+
+.carousel-indicators{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+}
+
+.carousel-indicators button{
+  width:14px;
+  height:6px;
+  border:none;
+  border-radius:6px;
+  background:rgba(255,255,255,.4);
+}
+
+.carousel-indicators button.active{
+  background:var(--accent);
+}
+
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:30px;
+}
+
+.thumb{
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.card h3 a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.card h3 a:hover{color:#ffb84d}
+
+/* ================= FOOTER ================= */
+footer{
+  margin-top:40px;
+  padding:20px;
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
+}
+
+.footer-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:space-between;
+}
+
+a.social{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  margin-right:10px;
+  position:relative;
+}
+
+a.social::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.25s;
+}
+
+a.social:hover::after{width:100%}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .menu-btn{display:block}
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:60px;
+    right:0;
+    flex-direction:column;
+    background:var(--card);
+    padding:12px;
+    border-radius:10px;
+  }
+
+  .nav-links.show{display:flex}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <div class="brand">
+    <img src="Electrofasters2.jpg" alt="Electrofaster">
+  </div>
+
+  <nav>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="nav-links" id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="robots.html">Nuestros Robots</a>
+      <a href="participaciones.html">Participaciones</a>
+      <a href="patrocinantes.html">Patrocinantes</a>
+      <a href="#footer">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="card">
+    Somos una familia apasionada por la robótica. Creamos proyectos, competimos y compartimos conocimientos para inspirar a más personas.
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-inner" id="carouselInner">
+      <div class="carousel-item"><img src="bar1.png"></div>
+      <div class="carousel-item"><img src="bar2.png"></div>
+      <div class="carousel-item"><img src="bar3.png"></div>
+      <div class="carousel-item"><img src="bar4.png"></div>
+      <div class="carousel-item"><img src="bar5.png"></div>
+    </div>
+    <div class="carousel-indicators" id="carouselIndicators"></div>
+  </div>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <img class="thumb" src="inicio1.png">
+    <h3><a href="robots.html">Nuestros Robots</a></h3>
+    <p>Diseños y prototipos competitivos.</p>
+  </article>
+
+  <article class="card">
+    <img class="thumb" src="inicio2.png">
+    <h3><a href="participaciones.html">Participaciones</a></h3>
+    <p>Competiciones y logros.</p>
+  </article>
+
+  <article class="card">
+    <img class="thumb" src="inicio3.png">
+    <h3><a href="patrocinantes.html">Patrocinantes</a></h3>
+    <p>Empresas que nos apoyan.</p>
+  </article>
+</section>
+
+<section style="margin-top:18px" class="center"> <h2>¡En Electrofaster, la robótica es el futuro y la diversión nuestro motor!</h2> </section>
+
+</main>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>Ubicación</h4>
+      <p style="color:var(--muted)">Guayaquil, Ecuador</p>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="mailto:loselectrofaster@gmail.com" style="color:white;font-weight:bold">loselectrofaster@gmail.com</a>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <a class="social" href="#">YouTube</a>
+      <a class="social" href="#">TikTok</a>
+      <a class="social" href="#">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+  const inner = document.getElementById('carouselInner');
+  const items = inner.children;
+  const indicators = document.getElementById('carouselIndicators');
+  let index = 0;
+
+  btn.onclick = () => nav.classList.toggle('show');
+
+  [...items].forEach((_,i)=>{
+    const b=document.createElement('button');
+    if(!i) b.classList.add('active');
+    b.onclick=()=>go(i);
+    indicators.appendChild(b);
+  });
+
+  function go(i){
+    index=i;
+    inner.style.transform=`translateX(-${i*100}%)`;
+    [...indicators.children].forEach((d,j)=>d.classList.toggle('active',j===i));
+  }
+
+  setInterval(()=>go((index+1)%items.length),3000);
+})();
+</script>
+
+</body>
+</html>
