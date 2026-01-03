@@ -41,6 +41,8 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:10px 0;
+  position: relative;
+  z-index: 1000;
 }
 
 .brand img{height:60px}
@@ -50,6 +52,7 @@ nav{position:relative}
 .nav-links{
   display:flex;
   gap:10px;
+  z-index: 2000;
 }
 
 .nav-links a{
@@ -93,6 +96,7 @@ nav{position:relative}
   width:100%;
   overflow:hidden;
   border-radius:var(--radius);
+  z-index: 1;
 }
 
 .carousel-inner{
@@ -209,6 +213,7 @@ a.social:hover::after{width:100%}
     background:var(--card);
     padding:12px;
     border-radius:10px;
+    z-index:2000;
   }
 
   .nav-links.show{display:flex}
@@ -330,3 +335,4 @@ a.social:hover::after{width:100%}
 
 </body>
 </html>
+
