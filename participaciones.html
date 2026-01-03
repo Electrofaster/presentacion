@@ -40,12 +40,15 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:10px 0;
+  position: relative;
+  z-index: 1000;
 }
 .brand img{height:60px}
 nav{position:relative}
 .nav-links{
   display:flex;
   gap:10px;
+  z-index: 2000;
 }
 .nav-links a{
   color:#fff;
@@ -162,6 +165,31 @@ footer{
 }
 
 /* RESPONSIVE */
+  @media (max-width:768px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:60px;
+        right:0;
+        background:var(--card);
+        flex-direction:column;
+        padding:10px;
+        border-radius:10px;
+        z-index:2000;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .robot-images img{
+        height:180px;
+      }
+    }
 @media(max-width:900px){
   .evento-grid{
     grid-template-columns:1fr 1fr;
@@ -509,3 +537,4 @@ footer{
 
 </body>
 </html>
+
