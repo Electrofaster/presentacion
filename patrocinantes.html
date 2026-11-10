@@ -48,7 +48,6 @@ nav{position:relative}
 .nav-links{
   display:flex;
   gap:10px;
-  z-index: 2000;
 }
 .nav-links a{
   color:#fff;
@@ -166,31 +165,6 @@ footer{
 }
 
 /* RESPONSIVE */
-@media (max-width:768px){
-      .nav-links{
-        display:none;
-        position:absolute;
-        top:60px;
-        right:0;
-        background:var(--card);
-        flex-direction:column;
-        padding:10px;
-        border-radius:10px;
-        z-index:2000;
-      }
-
-      .nav-links.show{
-        display:flex;
-      }
-
-      .menu-btn{
-        display:block;
-      }
-
-      .robot-images img{
-        height:180px;
-      }
-    }
 @media(max-width:900px){
   .evento-grid{
     grid-template-columns:1fr 1fr;
@@ -284,9 +258,9 @@ Gracias a su apoyo, podemos prototipar componentes, mejorar nuestros robots y ex
   <div class="footer-item"><h4>Contacto</h4><p>loselectrofaster@gmail.com</p></div>
   <div class="footer-item">
     <h4>Síguenos</h4>
-    <a class="social" href="#">YouTube</a>
-    <a class="social" href="#">TikTok</a>
-    <a class="social" href="#">Instagram</a>
+    <a class="social" href="https://www.youtube.com/@loselectrofaster">YouTube</a>
+    <a class="social" href="https://www.tiktok.com/@loselectrofaster">TikTok</a>
+    <a class="social" href="https://www.instagram.com/electrofaster/">Instagram</a>
   </div>
 </div>
 <p style="text-align:center;color:var(--muted)">© 2024 Electrofaster</p>
@@ -304,4 +278,3 @@ Gracias a su apoyo, podemos prototipar componentes, mejorar nuestros robots y ex
 
 </body>
 </html>
-
